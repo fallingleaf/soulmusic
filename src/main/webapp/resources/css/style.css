@@ -1,0 +1,186 @@
+/* General page */
+
+body {
+  padding-top: 50px;
+}
+
+.error {
+	color: #a94442;
+	background-color: #f2dede;
+}
+
+.sub-header {
+  padding-bottom: 10px;
+  border-bottom: 1px solid #eee;
+}
+
+.navbar-fixed-top {
+  border: 0;
+}
+
+
+.sidebar {
+  display: none;
+}
+@media (min-width: 768px) {
+  .sidebar {
+    position: fixed;
+    top: 51px;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    padding: 20px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background-color: #f5f5f5;
+    border-right: 1px solid #eee;
+  }
+}
+
+.nav-sidebar {
+  margin-right: -21px; /* 20px padding + 1px border */
+  margin-bottom: 20px;
+  margin-left: -20px;
+}
+.nav-sidebar > li > a {
+  padding-right: 20px;
+  padding-left: 20px;
+}
+.nav-sidebar > .active > a,
+.nav-sidebar > .active > a:hover,
+.nav-sidebar > .active > a:focus {
+  color: #fff;
+  background-color: #428bca;
+}
+
+
+.main {
+  padding: 20px;
+}
+@media (min-width: 768px) {
+  .main {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+.main .page-header {
+  margin-top: 0;
+}
+
+/* Profile page css */
+
+div.album {
+	display: inline-block;
+	float: left;
+	width: 150px;
+	height: 200px;
+	
+	margin-right: 20px;
+	margin-top: 10px;
+}
+
+div.album img {
+	width: 150px;
+	height: 150px;
+}
+
+div.album p {
+	font-size: 20px;
+	text-align: center;
+	
+}
+
+.album-form {
+	
+}
+
+/* Album detail css */
+.album-info img {
+	width: 150px;
+	height: 150px;
+}
+
+.album-info p {
+	font-size: 40px;
+	font-style: bold;
+	text-align: center
+}
+
+.music {
+	margin-top: 20px;	
+}
+
+.music audio {
+	vertical-align: middle;
+}
+
+.music-upload {
+	margin-top: 20px;
+}
+
+/* Post page css */
+.post-form {
+	padding: 20px;
+}
+
+.music-group {
+	padding: 20px;
+}
+.music-group img {
+	float: left;
+	width: 80px;
+	height: 80px;
+	margin-right: 20px;
+}
+
+span.title {
+	vertical-align: top;
+	font-style: italic;
+	font-size: 24px;
+}
+
+.radio-group label {
+	margin-left: 10px;
+	margin-right: 20px;
+}
+
+/* Post page css */
+.post {
+	margin-top: 20px;	
+}
+
+.music-group .note {
+	font-size: 16px;
+}
+
+div.comment {
+	margin-left: 10px;
+	padding: 10px;	
+}
+
+p.comment-text {
+	margin-top: 15px;
+}
+
+.comment-box {
+	width: 100%;
+	height: 50px;
+}
+
+span.user {
+	color: #428bca;
+	font-size: 16px;
+	font-weight: bold;
+}
+
+span.user img {
+	width: 25px;
+	height: 25px;
+}
+
+.indicator {
+	margin-left: 10px;
+	margin-top: 20px;
+}
+
