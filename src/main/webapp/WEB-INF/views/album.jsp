@@ -106,9 +106,9 @@
 			$(".btn-del").click(function(e) {
 				e.preventDefault();
 				var url = $(this).attr('href');
-				var target = $(this).parent('div.music');
+				var target = $(this).closest('div.music');
 				$.post(url, {}, function(result) {
-					console.log(result);
+					
 					if(result.success) {
 						target.remove();
 					}

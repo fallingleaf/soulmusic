@@ -8,6 +8,8 @@ import com.melody.model.Album;
 import com.melody.model.Music;
 import com.melody.model.Playlist;
 import com.melody.model.User;
+import com.melody.model.Post;
+import com.melody.model.Comment;
 
 @Repository
 public class MusicDaoImpl implements MusicDAO{
@@ -49,13 +51,25 @@ public class MusicDaoImpl implements MusicDAO{
 	public Music load(long id) {
 		return sessionFactory.getCurrentSession().load(Music.class, id);
 	}
+	
+	public void deletePost(Post post) {
+		for(Comment comment: post.getComments()) {
+			comment.setUser(null);
+			sessionFactory.getCurrentSession().delete(comment);
+		}
+		post.setUser(null);
+		sessionFactory.getCurrentSession().delete(post);
+	}
 
 	@Override
 	public void delete(Music music) {
 		Album album = music.getAlbum();
 		album.getMusics().remove(music);
 		music.setAlbum(null);
-		sessionFactory.getCurrentSession().persist(album);
+		for(Post post: music.getPosts()) {
+			deletePost(post);
+		}
+		//sessionFactory.getCurrentSession().persist(album);
 		sessionFactory.getCurrentSession().delete(music);
 	}
 

@@ -75,11 +75,12 @@
 												</a>
 												<span class="title"><c:out value="${post.getMusic().getTitle()}"/></span>
 												<p class="note"><c:out value="${post.getNote()}"/></p>
+												<a class="play-icon" href="#player-${post.getId() }">Play<span class="playme glyphicon glyphicon-music" aria-hidden="true"></span></a>
 											</div>
 										</div>
 										<div class="clearfix"></div>
-										<div class="player" id="${post.getId() }" style="display:none;">
-											<audio controls>
+										<div class="player" id="player-${post.getId() }" style="display:none;">
+											<audio  controls>
 												<source src="<c:url value='/resources/upload/${post.getMusic().getTitle() }'/>" type="audio/mp3">
 												</source>
 											</audio>
@@ -116,6 +117,12 @@
 		<script type="text/javascript">
 			<c:url var="imgUrl" value="/resources/images/usericon.png"/>
 			$(function(){
+				$('.play-icon').click(function(e) {
+					e.preventDefault();
+					var target = $(this).attr('href');
+					$(target).slideDown();
+				});
+				
 				$(".indicator").click(function(e) {
 					
 					e.preventDefault();

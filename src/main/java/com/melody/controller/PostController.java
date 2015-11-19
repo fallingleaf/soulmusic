@@ -48,7 +48,7 @@ public class PostController {
 	public String addNewPost(@PathVariable long id, @ModelAttribute("post") Post post, Model model) {
 		Music music = musicService.loadMusic(id);
 		if(music == null) {
-			return "redirect:/hotmusic";
+			return "redirect:/profile";
 		}
 		model.addAttribute("music", music);
 		return "post";
@@ -63,7 +63,7 @@ public class PostController {
 		if(!result.hasErrors()) {
 			postService.addNewPost(username, id, post);
 			ra.addFlashAttribute("message", "Post created.");
-			return "redirect:/profile";
+			return "redirect:/hotmusic";
 		}
 		return "post";
 	}

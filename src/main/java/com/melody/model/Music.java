@@ -46,7 +46,7 @@ public class Music {
 		this.id = id;
 	}
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "album_id")
 	public Album getAlbum() {
 		return album;

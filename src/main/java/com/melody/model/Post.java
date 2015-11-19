@@ -55,7 +55,7 @@ public class Post {
 		this.note = note;
 	}
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "music_id")
 	public Music getMusic() {
 		return music;

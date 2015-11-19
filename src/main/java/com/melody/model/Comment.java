@@ -37,7 +37,7 @@ public class Comment {
 		this.msg = msg;
 	}
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "user_id")
 	public User getUser() {
 		return user;
@@ -47,7 +47,7 @@ public class Comment {
 		this.user = user;
 	}
 	
-	@ManyToOne(cascade = CascadeType.ALL)
+	@ManyToOne(cascade = CascadeType.PERSIST)
 	@JoinColumn(name = "post_id")
 	public Post getPost() {
 		return post;

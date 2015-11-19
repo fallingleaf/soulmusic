@@ -36,7 +36,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 	protected void configure(HttpSecurity http) throws Exception {
 		http
 			.authorizeRequests()
-				.antMatchers("/index", "/login", "/register")
+				.antMatchers("/", "/index", "/login", "/register", "/welcome")
 				.permitAll()
 				.antMatchers("/admin/**")
 				.access("hasRole('ROLE_ADMIN')")
@@ -47,7 +47,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter{
 				.loginPage("/login")
 				.loginProcessingUrl("/j_spring_security_check")
 				.defaultSuccessUrl("/profile", true)
-				.successHandler(savedRequestAwareAuthenticationSuccessHandler())
+				//.successHandler(savedRequestAwareAuthenticationSuccessHandler())
 				.failureUrl("/login?error")
 				.usernameParameter("username")
 				.passwordParameter("password")

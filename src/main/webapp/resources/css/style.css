@@ -184,3 +184,15 @@ span.user img {
 	margin-top: 20px;
 }
 
+.player {
+	margin: 10px;
+}
+
+.playme {
+	margin-left: 5px;
+}
+
+a.play-icon:link {
+	text-decoration: none;
+}
+
